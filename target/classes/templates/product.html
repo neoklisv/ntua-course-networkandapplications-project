@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Products</title>
+</head>
+<body>
+<div align="center">
+    <h1>Product List</h1>
+    <a href="/myhomepage">Homepage</a>
+    <a href="/basket">Basket</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Made In</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${listProducts}">
+            	<td th:text="${product.id}">Product ID</td>
+                <td th:text="${product.name}">Name</td>
+                <td th:text="${product.brand}">Brand</td>
+                <td th:text="${product.madein}">Made in</td>
+                <td th:title="${#numbers.formatDecimal(product.price*vat, 0, 'COMMA', 2, 'POINT')} + ' inc. VAT'" th:text="${product.price}">Price</td>
+                <td>
+                	<a th:href="@{'/addCart/' + ${product.id}}">Add to Cart</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+      <form action="/countryp" method="post">
+    <label th:text="${country}"> Selected Country</label>
+    <label>Change Country:</label>
+    <select name="country" id="country">
+     <option th:text="${vat_code}" value="" selected disabled hidden></option>
+     <option value="0">Greece</option>
+     <option value="1">UK</option>
+     <option value="2">Cyprus</option>
+     <option value="3">Germany</option>
+     <option value="4">France</option>
+    </select>
+    <input type="submit">
+    </form>
+</div>    
+</body>
+</html>

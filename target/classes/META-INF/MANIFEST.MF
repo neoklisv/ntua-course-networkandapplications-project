@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: neocl
+Build-Jdk: 14.0.2
+Implementation-Title: NetworkApplicationsProject
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: net.app
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/NetworkApplicationsProject
+Created-By: Maven Integration for Eclipse
+

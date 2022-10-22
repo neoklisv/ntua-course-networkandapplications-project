@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Login</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Shop Login</h1>
+		<p><a href="/products">Products</a></p>
+		<br />
+		<form action="/login_enter" method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="username" id="username"/></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" id="password"/></td>
+				</tr>					
+				<tr>
+					<td colspan="2"><button type="submit">Login</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
